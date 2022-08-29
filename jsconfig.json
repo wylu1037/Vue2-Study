@@ -1,0 +1,15 @@
+// 配置src包的别名
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "disk"
+    ]
+}
