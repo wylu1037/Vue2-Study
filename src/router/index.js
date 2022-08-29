@@ -9,6 +9,7 @@ Vue.use(VueRouter)
 // 引入路由组件
 import Register from '@/pages/Register'
 import Login from '@/pages/Login'
+import Home from '@/pages/Home'
 
 // 配置路由
 const router = new VueRouter({
@@ -27,6 +28,11 @@ const router = new VueRouter({
             name: 'login',
             path: '/login',
             component: Login
+        },
+        {
+            name: 'home',
+            path: '/home',
+            component: Home
         }
     ],
 })

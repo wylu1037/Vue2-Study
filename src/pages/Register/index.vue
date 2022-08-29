@@ -29,7 +29,9 @@
             </el-form-item>
         </el-form>
         <div class="tip">
-            已有账号？<a href="login" style="text-decoration-line: none"
+            已有账号？<a
+                href="login"
+                style="text-decoration-line: none; font-weight: bold"
                 >登录已有账号</a
             >
         </div>

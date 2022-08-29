@@ -11,7 +11,9 @@
                 <el-input type="password" placeholder="密码"></el-input>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" class="loginBtn">登录</el-button>
+                <el-button type="primary" class="loginBtn" @click="login"
+                    >登录</el-button
+                >
                 <el-button type="success" class="loginBtn" @click="toRegister"
                     >注册</el-button
                 >
@@ -27,6 +29,9 @@
 export default {
     name: 'Login',
     methods: {
+        login() {
+            this.$router.push({ name: 'home' })
+        },
         toRegister() {
             this.$router.push({ name: 'register' })
         },
