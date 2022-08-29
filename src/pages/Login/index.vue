@@ -1,5 +1,5 @@
 <template>
-  <div class="loginPage">
+  <div class="loginContainer">
     <div>
         <h1>中国安徽省DEMO系统</h1>
     </div>
@@ -27,8 +27,8 @@ export default {
 }
 </script>
 
-<style>
-.loginPage {
+<style lang="css" scoped>
+.loginContainer {
     border-radius: 20px;
     width: 350px;
     margin: auto;
