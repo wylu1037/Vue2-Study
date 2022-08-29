@@ -1,41 +1,44 @@
 <template>
-  <div class="registerContainer">
-    <div>
-        <h1>欢迎注册</h1>
+    <div class="registerContainer">
+        <div>
+            <h1>欢迎注册</h1>
+        </div>
+
+        <el-form>
+            <el-form-item>
+                <el-input placeholder="姓名"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-input placeholder="邮箱"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-input placeholder="验证码"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-input placeholder="请设置密码"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-input placeholder="请确认密码"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-input placeholder="地址"></el-input>
+            </el-form-item>
+
+            <el-form-item>
+                <el-button type="primary">同意条款并注册</el-button>
+            </el-form-item>
+        </el-form>
+        <div class="tip">
+            已有账号？<a href="login" style="text-decoration-line: none"
+                >登录已有账号</a
+            >
+        </div>
     </div>
-
-    <el-form>
-        <el-form-item>
-            <el-input placeholder="姓名"></el-input>
-        </el-form-item>
-        <el-form-item>
-            <el-input placeholder="邮箱"></el-input>
-        </el-form-item>
-        <el-form-item>
-            <el-input placeholder="验证码"></el-input>
-        </el-form-item>
-        <el-form-item>
-            <el-input placeholder="请设置密码"></el-input>
-        </el-form-item>
-        <el-form-item>
-            <el-input placeholder="请确认密码"></el-input>
-        </el-form-item>
-        <el-form-item>
-            <el-input placeholder="地址"></el-input>
-        </el-form-item>
-
-        <el-checkbox>我已阅读并同意《用户协议》</el-checkbox>
-        <el-form-item>
-            <el-button type="primary">同意条款并注册</el-button>
-        </el-form-item>
-    </el-form>
-    <p class="tip">已有账号？<a href="#">登录已有账号</a></p>
-  </div>
 </template>
 
 <script>
 export default {
-    name: 'Register'
+    name: 'Register',
 }
 </script>
 
@@ -46,7 +49,7 @@ export default {
     margin: auto;
     position: absolute;
     top: 50%;
-	left: 50%;
-    transform: translate(-50%,-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 </style>

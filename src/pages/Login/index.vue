@@ -12,7 +12,9 @@
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" class="loginBtn">登录</el-button>
-                <el-button type="success" class="loginBtn">注册</el-button>
+                <el-button type="success" class="loginBtn" @click="toRegister"
+                    >注册</el-button
+                >
             </el-form-item>
         </el-form>
         <p class="tip">温馨提示：</p>
@@ -24,6 +26,11 @@
 <script>
 export default {
     name: 'Login',
+    methods: {
+        toRegister() {
+            this.$router.push({ name: 'register' })
+        },
+    },
 }
 </script>
 
