@@ -4,7 +4,7 @@
             <Nav></Nav>
         </div>
         <div>
-            <el-container style="height: 757px; border: 1px solid #eee">
+            <el-container style="height: 757px">
                 <el-aside
                     width="200px"
                     height="757px"
