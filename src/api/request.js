@@ -2,7 +2,7 @@ import axios from 'axios'
 import nprogress from 'nprogress'
 import 'nprogress/nprogress.css'
 
-const requests = axios.created({
+const requests = axios.create({
     baseUrl: '/chain',
     timeout: 20000
 })

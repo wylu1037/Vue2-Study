@@ -73,64 +73,96 @@
 
                 <el-container>
                     <el-main>
-                        <el-table :data="tableData">
+                        <el-button
+                            type="primary"
+                            style="width: 70px"
+                            @click="getAllChainList"
+                            >查询</el-button
+                        >
+                        <el-table border :data="chainList">
                             <el-table-column
                                 type="index"
                                 label="序号"
                                 width="200"
                             ></el-table-column>
-                            <el-table-column prop="date" label="日期">
+                            <el-table-column prop="Name" label="名称">
                             </el-table-column>
-                            <el-table-column prop="name" label="姓名">
+                            <el-table-column
+                                prop="ChainType"
+                                label="链类型"
+                                filter-placement="bottom-end"
+                            >
+                                <template slot-scope="scope">
+                                    <el-tag
+                                        :type="
+                                            scope.row.ChainType === 0
+                                                ? 'primary'
+                                                : 'success'
+                                        "
+                                        disable-transitions
+                                        >{{
+                                            matchChainTypeName(
+                                                scope.row.ChainType
+                                            )
+                                        }}</el-tag
+                                    >
+                                </template>
                             </el-table-column>
-                            <el-table-column prop="address" label="地址">
+                            <el-table-column
+                                prop="BlockChainId"
+                                label="BlockChainID"
+                            >
+                            </el-table-column>
+                            <el-table-column
+                                fixed="right"
+                                label="操作"
+                                width="200px"
+                            >
+                                <template slot-scope="scope">
+                                    <el-button
+                                        @click="queryChainInfo(scope.row.ID)"
+                                        type="primary"
+                                        size="small"
+                                        >查看</el-button
+                                    >
+                                    <el-button type="danger" size="small"
+                                        >删除</el-button
+                                    >
+                                </template>
                             </el-table-column>
                         </el-table>
                     </el-main>
                 </el-container>
             </el-container>
         </div>
-
-        <div></div>
     </div>
 </template>
 <script>
+import { mapState } from 'vuex'
+
 export default {
     name: 'Home',
 
-    data() {
-        return {
-            tableData: [
-                {
-                    date: '2022年02月10日 12时09分',
-                    name: 'Tom',
-                    address: '美国华盛顿',
-                },
-                {
-                    date: '2022年02月10日 12时09分',
-                    name: 'Tom',
-                    address: '美国华盛顿',
-                },
-                {
-                    date: '2022年02月10日 12时09分',
-                    name: 'Tom',
-                    address: '美国华盛顿',
-                },
-                {
-                    date: '2022年02月10日 12时09分',
-                    name: 'Tom',
-                    address: '美国华盛顿',
-                },
-                {
-                    date: '2022年02月10日 12时09分',
-                    name: 'Tom',
-                    address: '美国华盛顿',
-                },
-            ],
-        }
+    methods: {
+        matchChainTypeName(type) {
+            return type == 0 ? '晶格链' : '超级账本'
+        },
+
+        getAllChainList() {
+            this.$store.dispatch('latticeModule/getAllChainList')
+        },
+
+        queryChainInfo(chainId) {
+            console.log(chainId)
+        },
+    },
+
+    computed: {
+        ...mapState('latticeModule', ['chainList']),
     },
 }
 </script>
+
 <style lang="css">
 .el-header {
     background-color: #b3c0d1;

@@ -13,11 +13,17 @@ Vue.config.productionTip = false
 // 引入路由
 import router from '@/router'
 
+// 引入仓库
+import store from '@/store'
+
 Vue.use(ElementUI)
 
 new Vue({
   render: h => h(App),
 
   // 注册路由
-  router: router
+  router: router,
+
+  // 注册仓库
+  store: store
 }).$mount('#app')

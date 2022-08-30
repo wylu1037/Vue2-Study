@@ -4,7 +4,7 @@ const state = {
     chainList: []
 }
 
-const action = {
+const actions = {
     async getAllChainList(context) {
         let result = await getAllChainList()
         if(result.code === 200) {
@@ -24,8 +24,9 @@ const getters = {
 }
 
 export default {
+    namespaced: true,
     state,
-    action,
+    actions,
     mutations,
     getters
 }
