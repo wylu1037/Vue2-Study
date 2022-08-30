@@ -75,7 +75,11 @@
                     <el-main>
                         <el-button
                             type="primary"
-                            style="width: 70px"
+                            style="
+                                margin-right: -1190px;
+                                margin-bottom: 20px;
+                                position: relative;
+                            "
                             @click="getAllChainList"
                             >查询</el-button
                         >
@@ -116,18 +120,22 @@
                             <el-table-column
                                 fixed="right"
                                 label="操作"
-                                width="200px"
+                                width="120px"
+                                align="center"
                             >
                                 <template slot-scope="scope">
                                     <el-button
                                         @click="queryChainInfo(scope.row.ID)"
-                                        type="primary"
+                                        icon="el-icon-search"
+                                        circle
                                         size="small"
-                                        >查看</el-button
-                                    >
-                                    <el-button type="danger" size="small"
-                                        >删除</el-button
-                                    >
+                                    ></el-button>
+                                    <el-button
+                                        type="danger"
+                                        icon="el-icon-delete"
+                                        circle
+                                        size="small"
+                                    ></el-button>
                                 </template>
                             </el-table-column>
                         </el-table>
