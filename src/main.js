@@ -1,5 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
+import Nav from '@/components/Nav'
+
+// 注册全局组件
+Vue.component(Nav.name, Nav)
+
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 
