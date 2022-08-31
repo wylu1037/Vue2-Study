@@ -2,7 +2,7 @@
   <el-main>
     <el-button
       type="primary"
-      style="margin-right: -1190px; margin-bottom: 20px; position: relative"
+      class="node-list-query-btn"
       @click="getAllChainList"
       >查询</el-button
     >
@@ -22,10 +22,8 @@
           >
         </template>
       </el-table-column>
-      <el-table-column prop="BlockChainId" label="IP">
-      </el-table-column>
-      <el-table-column prop="BlockChainId" label="节点账户">
-      </el-table-column>
+      <el-table-column prop="BlockChainId" label="IP"> </el-table-column>
+      <el-table-column prop="BlockChainId" label="节点账户"> </el-table-column>
       <el-table-column fixed="right" label="操作" width="120px" align="center">
         <template slot-scope="scope">
           <el-button
@@ -48,10 +46,14 @@
 
 <script>
 export default {
-    name: 'NodeList',
-}
+  name: "NodeList",
+};
 </script>
 
 <style>
-
+.node-list-query-btn {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 10px;
+}
 </style>

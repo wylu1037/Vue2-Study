@@ -49,7 +49,7 @@
               icon="el-icon-delete"
               circle
               size="small"
-              @click="deleteChainById(scope.row.ID)"
+              @click="deleteChain(scope.row.ID)"
             ></el-button>
           </template>
         </el-table-column>
@@ -78,6 +78,10 @@ export default {
     },
 
     deleteChainById(chainId) {
+      this.$store.dispatch("latticeModule/deleteChainById", chainId);
+    },
+
+    deleteChain(chainId) {
       this.$confirm("此操作将永久删除链，是否继续？", "提示", {
         confirmButtonText: "确定",
         cancelButtonText: "取消",
@@ -85,7 +89,7 @@ export default {
       })
         .then(() => {
           // 调用接口删除链
-          console.log("@chainId: " + chainId);
+          // deleteChainById(chainId);
           this.$message({ type: "success", message: "删除成功！" });
         })
         .catch(() => {
@@ -110,5 +114,7 @@ export default {
 
 .chain-list-query-btn {
   margin-left: auto;
+  display: block;
+  margin-bottom: 10px;
 }
 </style>

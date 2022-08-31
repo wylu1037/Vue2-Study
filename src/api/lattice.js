@@ -5,3 +5,9 @@ export const getAllChainList = () => requests({
     method: 'get',
     url: '/chain/getAll'
 })
+
+// 删除链
+export const deleteChainById = (chainId) => requests({
+    method:'get',
+    url: '/chain/delete/' + chainId
+})

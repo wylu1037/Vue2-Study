@@ -10,8 +10,8 @@ Vue.use(VueRouter)
 import Register from '@/pages/Register'
 import Login from '@/pages/Login'
 import Home from '@/pages/Home'
-import ChainList from '@/pages/Chain/chainList'
-import NodeList from '@/pages/Chain/nodeList'
+import ChainList from '@/pages/Chain/ChainList'
+import NodeList from '@/pages/Chain/NodeList'
 
 // 配置路由
 const router = new VueRouter({

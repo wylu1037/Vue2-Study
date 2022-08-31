@@ -1,4 +1,4 @@
-import {getAllChainList} from '@/api/lattice'
+import {getAllChainList, deleteChainById} from '@/api/lattice'
 
 const state = {
     chainList: []
@@ -10,7 +10,14 @@ const actions = {
         if(result.code === 200) {
             context.commit('GETALLCHAINLIST', result.data)
         }
-    }
+    },
+
+    async deleteChainById(context, chainId) {
+        let result = await deleteChainById(chainId)
+        if(result.code !== 200) {
+            throw new Error('删除失败！');
+        }
+    } 
 }
 
 const mutations = {
