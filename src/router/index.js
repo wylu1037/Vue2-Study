@@ -11,6 +11,7 @@ import Register from '@/pages/Register'
 import Login from '@/pages/Login'
 import Home from '@/pages/Home'
 import ChainList from '@/pages/Chain/chainList'
+import NodeList from '@/pages/Chain/nodeList'
 
 // 配置路由
 const router = new VueRouter({
@@ -40,6 +41,11 @@ const router = new VueRouter({
                     path: 'chain/list',
                     component: ChainList
                 },
+                {
+                    name: 'nodeList',
+                    path: 'node/list',
+                    component: NodeList
+                }
             ]
         }
     ],

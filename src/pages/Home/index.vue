@@ -17,8 +17,8 @@
                             >
                             <el-menu-item-group>
                                 <template slot="title">分组一</template>
-                                <el-menu-item index="1-1"><router-link to="/home/chain/list">区块链</router-link></el-menu-item>
-                                <el-menu-item index="1-2"><router-link>节点信息</router-link></el-menu-item>
+                                <el-menu-item index="1-1"><router-link style="text-decoration:none" to="/home/chain/list">区块链</router-link></el-menu-item>
+                                <el-menu-item index="1-2"><router-link style="text-decoration:none" to="/home/node/list">节点信息</router-link></el-menu-item>
                             </el-menu-item-group>
                             <el-menu-item-group title="分组2">
                                 <el-menu-item index="1-3">选项3</el-menu-item>
