@@ -11,3 +11,10 @@ export const deleteChainById = (chainId) => requests({
     method:'get',
     url: '/chain/delete/' + chainId
 })
+
+// 根据链查询节点列表
+export const getNodeList = (chainId) => requests({
+    method: 'get',
+    url: '/chain/findNodes',
+    params: {chainId: chainId}
+})

@@ -1,29 +1,14 @@
 <template>
   <el-main>
-    <el-button
-      type="primary"
-      class="node-list-query-btn"
-      @click="getAllChainList"
+    <el-input v-model="chainId" placeholder="请输入链ID"></el-input>
+    <el-button type="primary" class="node-list-query-btn" @click="getNodeList"
       >查询</el-button
     >
-    <el-table border :data="chainList">
+    <el-table border :data="nodeList">
       <el-table-column type="index" label="序号" width="200"></el-table-column>
       <el-table-column prop="Name" label="节点名称"> </el-table-column>
-      <el-table-column
-        prop="ChainType"
-        label="节点类型"
-        filter-placement="bottom-end"
-      >
-        <template slot-scope="scope">
-          <el-tag
-            :type="scope.row.ChainType === 0 ? 'primary' : 'success'"
-            disable-transitions
-            >{{ matchChainTypeName(scope.row.ChainType) }}</el-tag
-          >
-        </template>
-      </el-table-column>
-      <el-table-column prop="BlockChainId" label="IP"> </el-table-column>
-      <el-table-column prop="BlockChainId" label="节点账户"> </el-table-column>
+      <el-table-column prop="IP" label="IP地址"> </el-table-column>
+      <el-table-column prop="ChainId" label="链ID"> </el-table-column>
       <el-table-column fixed="right" label="操作" width="120px" align="center">
         <template slot-scope="scope">
           <el-button
@@ -45,8 +30,26 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   name: "NodeList",
+
+  data() {
+    return {
+      chainId: undefined,
+    };
+  },
+
+  methods: {
+    getNodeList() {
+      this.$store.dispatch("latticeModule/getNodeList", this.chainId);
+    },
+  },
+
+  computed: {
+    ...mapState("latticeModule", ["nodeList"]),
+  },
 };
 </script>
 
