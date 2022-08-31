@@ -10,6 +10,7 @@ Vue.use(VueRouter)
 import Register from '@/pages/Register'
 import Login from '@/pages/Login'
 import Home from '@/pages/Home'
+import ChainList from '@/pages/Chain/chainList'
 
 // 配置路由
 const router = new VueRouter({
@@ -32,7 +33,14 @@ const router = new VueRouter({
         {
             name: 'home',
             path: '/home',
-            component: Home
+            component: Home,
+            children: [
+                {
+                    name: 'chainList',
+                    path: 'chain/list',
+                    component: ChainList
+                },
+            ]
         }
     ],
 })
