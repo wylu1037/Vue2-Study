@@ -92,9 +92,15 @@
         </el-aside>
 
         <el-container style="width: 100vw">
-          <el-tabs v-model="tabValue" style="width: 100vw" type="card" editable>
+          <el-tabs
+            v-model="tabValue"
+            style="width: 100vw"
+            type="card"
+            :closable="closable"
+            @edit="editTab"
+          >
             <el-tab-pane
-              style="width: 100vw; height: 100vh"
+              style="width: 100%; height: 100vh"
               :key="item.name"
               v-for="(item, index) in tabs"
               :label="item.title"
@@ -116,6 +122,7 @@ export default {
 
   data() {
     return {
+      closable: true,
       tabValue: "",
       tabs: [],
     };
@@ -127,6 +134,27 @@ export default {
         this.tabs.push(tab);
       }
       this.tabValue = tabValue;
+      this.closable = this.tabs.length !== 1;
+    },
+
+    editTab(targetName, action) {
+      if (action === "remove") {
+        let tabs = this.tabs;
+        let activeName = this.tabValue;
+        if (activeName === targetName) {
+          tabs.forEach((tab, index) => {
+            if (tab.name === targetName) {
+              let nextTab = tabs[index + 1] || tabs[index - 1];
+              if (nextTab) {
+                activeName = nextTab.name;
+              }
+            }
+          });
+        }
+        this.tabValue = activeName;
+        this.tabs = tabs.filter((tab) => tab.name !== targetName);
+        this.closable = this.tabs.length !== 1;
+      }
     },
 
     matchChainTypeName(type) {

@@ -109,7 +109,7 @@ export default {
 
 <style lang="css" scoped>
 .chain-list-main {
-  width: 100vw;
+  width: 100%;
 }
 
 .chain-list-query-btn {
