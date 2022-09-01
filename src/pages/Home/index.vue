@@ -17,14 +17,28 @@
               >
               <el-menu-item-group>
                 <template slot="title">分组一</template>
-                <el-menu-item index="1-1"
+                <el-menu-item
+                  index="1-1"
+                  @click="
+                    addTab(
+                      { name: 'BlockChain', title: '区块链' },
+                      'BlockChain'
+                    )
+                  "
                   ><router-link
                     style="text-decoration: none"
                     to="/home/chain/list"
                     >区块链</router-link
                   ></el-menu-item
                 >
-                <el-menu-item index="1-2"
+                <el-menu-item
+                  index="1-2"
+                  @click="
+                    addTab(
+                      { name: 'LatticeNode', title: '节点信息' },
+                      'LatticeNode'
+                    )
+                  "
                   ><router-link
                     style="text-decoration: none"
                     to="/home/node/list"
@@ -78,7 +92,17 @@
         </el-aside>
 
         <el-container style="width: 100vw">
-          <router-view></router-view>
+          <el-tabs v-model="tabValue" style="width: 100vw" type="card" editable>
+            <el-tab-pane
+              style="width: 100vw; height: 100vh"
+              :key="item.name"
+              v-for="(item, index) in tabs"
+              :label="item.title"
+              :name="item.name"
+            >
+              <router-view></router-view>
+            </el-tab-pane>
+          </el-tabs>
         </el-container>
       </el-container>
     </div>
@@ -90,7 +114,21 @@ import { mapState } from "vuex";
 export default {
   name: "Home",
 
+  data() {
+    return {
+      tabValue: "",
+      tabs: [],
+    };
+  },
+
   methods: {
+    addTab(tab, tabValue) {
+      if (JSON.stringify(this.tabs).indexOf(JSON.stringify(tab)) === -1) {
+        this.tabs.push(tab);
+      }
+      this.tabValue = tabValue;
+    },
+
     matchChainTypeName(type) {
       return type == 0 ? "晶格链" : "超级账本";
     },
