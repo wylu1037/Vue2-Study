@@ -1,13 +1,15 @@
 <template>
   <el-main>
-    <el-input
-      class="node-list-query-input"
-      v-model="chainId"
-      placeholder="请输入链ID"
-    ></el-input>
-    <el-button type="primary" class="node-list-query-btn" @click="getNodeList"
-      >查询</el-button
-    >
+    <div class="parent">
+      <el-input
+        class="node-list-query-input"
+        v-model="chainId"
+        placeholder="请输入链ID"
+      ></el-input>
+      <el-button type="primary" class="node-list-query-btn" @click="getNodeList"
+        >查询</el-button
+      >
+    </div>
     <el-table border :data="nodeList">
       <el-table-column type="index" label="序号" width="200"></el-table-column>
       <el-table-column prop="Name" label="节点名称"> </el-table-column>
@@ -58,16 +60,18 @@ export default {
 </script>
 
 <style>
+.parent {
+  display: flex;
+}
 .node-list-query-input {
-  display: inline-block;
+  display: block;
   width: 120px;
   margin-left: auto;
   margin-right: 20px;
   margin-bottom: 10px;
 }
 .node-list-query-btn {
-  display: inline-block;
-  margin-left: auto;
+  display: block;
   margin-bottom: 10px;
 }
 </style>

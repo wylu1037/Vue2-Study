@@ -98,9 +98,10 @@
             type="card"
             :closable="closable"
             @edit="editTab"
+            @tab-click="clickTab"
           >
             <el-tab-pane
-              style="width: 100%; height: 100vh"
+              style="width: 100%; height: 100%"
               :key="item.name"
               v-for="(item, index) in tabs"
               :label="item.title"
@@ -125,6 +126,11 @@ export default {
       closable: true,
       tabValue: "",
       tabs: [],
+
+      tabRoute: {
+        BlockChain: "/home/chain/list",
+        LatticeNode: "/home/node/list",
+      },
     };
   },
 
@@ -155,6 +161,11 @@ export default {
         this.tabs = tabs.filter((tab) => tab.name !== targetName);
         this.closable = this.tabs.length !== 1;
       }
+    },
+
+    clickTab(tab, event) {
+      const fullPath = this.tabRoute[tab.name];
+      this.$router.push(fullPath);
     },
 
     matchChainTypeName(type) {
