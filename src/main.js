@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 import Nav from '@/components/Nav'
+import Pagination from '@/components/Pagination'
 
 // 注册全局组件
 Vue.component(Nav.name, Nav)
+Vue.component(Pagination.name, Pagination)
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';

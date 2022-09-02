@@ -55,6 +55,12 @@
         </el-table-column>
       </el-table>
     </el-main>
+
+    <Pagination
+      :total="chainTotal"
+      :pageList="pageList"
+      :params="params"
+    ></Pagination>
   </div>
 </template>
 
@@ -63,6 +69,15 @@ import { mapState } from "vuex";
 
 export default {
   name: "ChainList",
+
+  data() {
+    return {
+      params: {
+        page: 1,
+        size: 10,
+      },
+    };
+  },
 
   methods: {
     matchChainTypeName(type) {
@@ -74,10 +89,7 @@ export default {
     },
 
     findPageChainList() {
-      this.$store.dispatch("latticeModule/findPageChainList", {
-        page: 1,
-        size: 10,
-      });
+      this.$store.dispatch("latticeModule/findPageChainList", this.params);
     },
 
     queryChainInfo(chainId) {
@@ -106,10 +118,14 @@ export default {
           });
         });
     },
+
+    pageList() {
+      this.findPageChainList();
+    },
   },
 
   computed: {
-    ...mapState("latticeModule", ["chainList"]),
+    ...mapState("latticeModule", ["chainList", "chainTotal"]),
   },
 };
 </script>
@@ -117,6 +133,7 @@ export default {
 <style lang="css" scoped>
 .chain-list-main {
   width: 100%;
+  height: 100%;
 }
 
 .chain-list-query-btn {
