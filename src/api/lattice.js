@@ -18,3 +18,11 @@ export const getNodeList = (chainId) => requests({
     url: '/chain/findNodes',
     params: {chainId: chainId}
 })
+
+// 分页查询链列表
+export const findPageChainList = (req) => requests({
+    method: 'post',
+    url: '/chain/findPageChainList',
+    data: JSON.stringify(req),
+    headers: {"Content-Type": "application/json; charset=UTF-8"}
+})

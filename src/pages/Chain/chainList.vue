@@ -5,7 +5,7 @@
         <el-button
           class="chain-list-query-btn"
           type="primary"
-          @click="getAllChainList"
+          @click="findPageChainList"
           >查询</el-button
         >
       </div>
@@ -71,6 +71,13 @@ export default {
 
     getAllChainList() {
       this.$store.dispatch("latticeModule/getAllChainList");
+    },
+
+    findPageChainList() {
+      this.$store.dispatch("latticeModule/findPageChainList", {
+        page: 1,
+        size: 10,
+      });
     },
 
     queryChainInfo(chainId) {

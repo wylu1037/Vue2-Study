@@ -1,7 +1,8 @@
-import {getAllChainList, deleteChainById, getNodeList} from '@/api/lattice'
+import {getAllChainList, deleteChainById, getNodeList, findPageChainList} from '@/api/lattice'
 
 const state = {
     chainList: [],
+    chainTotal: 0,
     nodeList: []
 }
 
@@ -25,6 +26,13 @@ const actions = {
         if(result.code === 200) {
             context.commit('GETNODELIST', result.data)
         }
+    },
+
+    async findPageChainList(context, req) {
+        let result = await findPageChainList(req)
+        if(result.code === 200) {
+            context.commit('FINDPAGECHAINLIST', result.data)
+        }
     }
 }
 
@@ -35,6 +43,11 @@ const mutations = {
 
     GETNODELIST(state, nodeList) {
         state.nodeList = nodeList
+    },
+
+    FINDPAGECHAINLIST(state, data) {
+        state.chainList = data.List
+        state.chainTotal = data.Total
     }
 }
  

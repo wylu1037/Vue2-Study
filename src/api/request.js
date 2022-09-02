@@ -4,7 +4,7 @@ import 'nprogress/nprogress.css'
 
 const requests = axios.create({
     baseUrl: '/chain',
-    timeout: 20000
+    timeout: 20000,
 })
 
 requests.interceptors.request.use((config) => {
