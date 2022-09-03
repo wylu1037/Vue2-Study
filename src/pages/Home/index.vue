@@ -1,8 +1,6 @@
 <template>
   <div class="home-root">
-    <div>
-      <Nav></Nav>
-    </div>
+    <Header></Header>
     <div style="height: 90%">
       <el-container>
         <el-aside
@@ -116,23 +114,21 @@
 </template>
 <script>
 import { mapState } from "vuex";
+import Header from "@/components/Header/index.vue";
 
 export default {
   name: "Home",
-
   data() {
     return {
       closable: true,
       tabValue: "",
       tabs: [],
-
       tabRoute: {
         BlockChain: "/home/chain/list",
         LatticeNode: "/home/node/list",
       },
     };
   },
-
   methods: {
     addTab(tab, tabValue) {
       if (JSON.stringify(this.tabs).indexOf(JSON.stringify(tab)) === -1) {
@@ -141,7 +137,6 @@ export default {
       this.tabValue = tabValue;
       this.closable = this.tabs.length !== 1;
     },
-
     editTab(targetName, action) {
       if (action === "remove") {
         let pushFlag = targetName === this.tabValue;
@@ -165,30 +160,26 @@ export default {
         this.closable = this.tabs.length !== 1;
       }
     },
-
     clickTab(tab, event) {
       const fullPath = this.tabRoute[tab.name];
       if (tab.$route.fullPath !== fullPath) {
         this.$router.push(fullPath);
       }
     },
-
     matchChainTypeName(type) {
       return type == 0 ? "晶格链" : "超级账本";
     },
-
     getAllChainList() {
       this.$store.dispatch("latticeModule/getAllChainList");
     },
-
     queryChainInfo(chainId) {
       console.log(chainId);
     },
   },
-
   computed: {
     ...mapState("latticeModule", ["chainList"]),
   },
+  components: { Header },
 };
 </script>
 

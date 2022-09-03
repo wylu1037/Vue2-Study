@@ -32,6 +32,6 @@ export default {
 </script>
 <style lang="css" scoped>
 .pagination {
-  margin-left: 55%;
+  float: right;
 }
 </style>
