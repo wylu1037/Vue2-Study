@@ -8,7 +8,7 @@
             <el-avatar
               shape="square"
               :size="35"
-              :src="require('./avatar.jpg')"
+              :src="require('./fish.jpg')"
             ></el-avatar>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default {
 .header-box {
   display: flex;
   width: 100%;
-  height: 60px;
+  height: 8%;
   background-color: #245ff5;
 }
 </style>

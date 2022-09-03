@@ -94,6 +94,7 @@ export default {
 </script>
 <style lang="css">
 .content-box {
+  height: 92%;
   display: flex;
 }
 </style>
