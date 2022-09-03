@@ -36,6 +36,7 @@ export default {
       tabRoute: {
         BlockChain: "/home/chain/list",
         LatticeNode: "/home/node/list",
+        YellowPage: "/home/yellow",
       },
     };
   },
@@ -71,6 +72,7 @@ export default {
       }
     },
 
+    // 点击激活tab页
     clickTab(tab, event) {
       const fullPath = this.tabRoute[tab.name];
       if (tab.$route.fullPath !== fullPath) {

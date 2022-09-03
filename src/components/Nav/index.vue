@@ -8,7 +8,7 @@
       <el-menu :collapse="false" :default-openeds="['1', '2', '3']">
         <el-submenu index="1">
           <template slot="title">
-            <i class="el-icon-message"></i>中科晶格</template
+            <i class="el-icon-goods"></i>中科晶格</template
           >
           <el-menu-item-group>
             <el-menu-item
@@ -33,7 +33,17 @@
               "
               >节点信息</el-menu-item
             >
-            <el-menu-item index="1-3">周杰轮</el-menu-item>
+            <el-menu-item
+              index="1-3"
+              @click="
+                addTab(
+                  { name: 'YellowPage', title: '黄页' },
+                  'YellowPage',
+                  '/home/yellow'
+                )
+              "
+              >黄页</el-menu-item
+            >
           </el-menu-item-group>
           <el-submenu index="1-4">
             <template slot="title">链类型</template>
@@ -42,7 +52,7 @@
           </el-submenu>
         </el-submenu>
         <el-submenu index="2">
-          <template slot="title"><i class="el-icon-menu"></i>禅道</template>
+          <template slot="title"><i class="el-icon-reading"></i>禅道</template>
           <el-menu-item-group>
             <el-menu-item index="2-1">项目</el-menu-item>
             <el-menu-item index="2-2">需求</el-menu-item>
@@ -50,7 +60,7 @@
           </el-menu-item-group>
         </el-submenu>
         <el-submenu index="3">
-          <template slot="title"><i class="el-icon-setting"></i>测试</template>
+          <template slot="title"><i class="el-icon-mouse"></i>测试</template>
           <el-menu-item-group>
             <el-menu-item index="3-1">提BUG</el-menu-item>
             <el-menu-item index="3-2">提优化</el-menu-item>
