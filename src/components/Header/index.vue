@@ -1,7 +1,10 @@
 <template>
   <div class="header-box">
     <!-- Logo部分 -->
-    <div style="display: flex; align-items: center; margin-left: 20px">
+    <div
+      style="display: flex; align-items: center; margin-left: 20px"
+      @click="jumpHome('login')"
+    >
       <el-col :span="12">
         <div class="demo-basic--circle">
           <div class="block">
@@ -25,6 +28,7 @@
         margin-left: 10px;
         font-weight: bolder;
       "
+      @click="jumpHome('register')"
     >
       华中大Vue学习系统
     </div>
@@ -54,6 +58,12 @@
 <script>
 export default {
   name: "Header",
+
+  methods: {
+    jumpHome(name) {
+      this.$router.push(name);
+    },
+  },
 };
 </script>
 <style lang="css" scoped>
