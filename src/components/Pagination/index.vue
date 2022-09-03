@@ -2,8 +2,9 @@
   <div class="pagination">
     <el-pagination
       background
-      layout="total, sizes, prev, pager, next, jumper"
+      layout="total, prev, pager, next, jumper"
       :total="total"
+      :hide-on-single-page="true"
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
     >
@@ -29,10 +30,8 @@ export default {
   props: ["total", "params", "pageList"],
 };
 </script>
-<style lang="css">
+<style lang="css" scoped>
 .pagination {
-  width: 100%;
-  height: 100%;
-  display: block;
+  margin-left: 55%;
 }
 </style>

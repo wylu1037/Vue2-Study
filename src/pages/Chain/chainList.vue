@@ -34,23 +34,19 @@
         <el-table-column
           fixed="right"
           label="操作"
-          width="120px"
+          width="160px"
           align="center"
         >
           <template slot-scope="scope">
-            <el-button
-              @click="queryChainInfo(scope.row.ID)"
-              icon="el-icon-search"
-              circle
-              size="small"
-            ></el-button>
+            <el-button @click="queryChainInfo(scope.row.ID)" size="small"
+              >详情</el-button
+            >
             <el-button
               type="danger"
-              icon="el-icon-delete"
-              circle
               size="small"
               @click="deleteChain(scope.row.ID)"
-            ></el-button>
+              >删除</el-button
+            >
           </template>
         </el-table-column>
       </el-table>
@@ -74,7 +70,7 @@ export default {
     return {
       params: {
         page: 1,
-        size: 10,
+        size: 8,
       },
     };
   },
@@ -133,7 +129,7 @@ export default {
 <style lang="css" scoped>
 .chain-list-main {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .chain-list-query-btn {
