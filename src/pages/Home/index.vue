@@ -144,6 +144,7 @@ export default {
 
     editTab(targetName, action) {
       if (action === "remove") {
+        let pushFlag = targetName === this.tabValue;
         let tabs = this.tabs;
         let activeName = this.tabValue;
         if (activeName === targetName) {
@@ -157,6 +158,9 @@ export default {
           });
         }
         this.tabValue = activeName;
+        if (pushFlag) {
+          this.$router.push(this.tabRoute[activeName]);
+        }
         this.tabs = tabs.filter((tab) => tab.name !== targetName);
         this.closable = this.tabs.length !== 1;
       }
@@ -164,7 +168,9 @@ export default {
 
     clickTab(tab, event) {
       const fullPath = this.tabRoute[tab.name];
-      this.$router.push(fullPath);
+      if (tab.$route.fullPath !== fullPath) {
+        this.$router.push(fullPath);
+      }
     },
 
     matchChainTypeName(type) {
