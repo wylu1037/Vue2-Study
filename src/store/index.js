@@ -1,14 +1,18 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
-import lattice from './lattice'
+import lattice from "./lattice";
+import nav from "./nav/index";
 
 export default new Vuex.Store({
-    modules: {
-        latticeModule: {
-            ...lattice,
-        }
-    }
-})
+  modules: {
+    latticeModule: {
+      ...lattice,
+    },
+    navModule: {
+      ...nav,
+    },
+  },
+});

@@ -28,6 +28,7 @@
     >
       华中大Vue学习系统
     </div>
+    <!-- 右边部分 -->
     <div style="display: flex; align-items: center; margin-left: auto">
       <div style="margin-right: 25px">
         <el-badge :value="99" class="item" type="primary">
