@@ -1,9 +1,9 @@
 [
-  { "id": 1, "label": "开发环境", "name": "first", "children": [] },
-  { "id": 2, "label": "测试环境", "name": "second", "children": [] },
-  { "id": 3, "label": "评测环境", "name": "third", "children": [] },
-  { "id": 4, "label": "阜南环境", "name": "fourth", "children": [] },
-  { "id": 5, "label": "亚信环境", "name": "fifth", "children": [] },
-  { "id": 6, "label": "NFT环境", "name": "sixth", "children": [] },
-  { "id": 7, "label": "基线环境", "name": "seventh", "children": [] }
+  { "id": 1, "label": "开发环境", "name": "first", "order": 1 },
+  { "id": 2, "label": "测试环境", "name": "second", "order": 2 },
+  { "id": 3, "label": "评测环境", "name": "third", "order": 3 },
+  { "id": 4, "label": "阜南环境", "name": "fourth", "order": 4 },
+  { "id": 5, "label": "亚信环境", "name": "fifth", "order": 5 },
+  { "id": 6, "label": "NFT环境", "name": "sixth", "order": 6 },
+  { "id": 7, "label": "基线环境", "name": "seventh", "order": 7 }
 ]

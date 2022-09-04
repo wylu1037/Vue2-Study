@@ -6,7 +6,9 @@
         :key="tab.id"
         :label="tab.label"
         :name="tab.name"
-        >{{ tab.label }}</el-tab-pane
+        ><PageEle :name="tab.name"
+          ><h1>{{ tab.name }}</h1></PageEle
+        ></el-tab-pane
       >
     </el-tabs>
   </div>
@@ -14,11 +16,11 @@
 
 <script>
 import { mapState, mapActions } from "vuex";
-import Dev from "@/components/Yellow/dev.vue";
+import PageEle from "@/components/Yellow/pageEle.vue";
 export default {
   name: "Yellow",
 
-  components: { Dev },
+  components: { PageEle },
 
   data() {
     return {
