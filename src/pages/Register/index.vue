@@ -28,7 +28,7 @@
         </el-form-item>
 
         <el-form-item style="text-align: center">
-          <el-button type="primary">同意条款并注册</el-button>
+          <el-button type="primary" @click="register">同意条款并注册</el-button>
         </el-form-item>
       </el-form>
       <div style="text-align: center" class="tip">
@@ -45,6 +45,16 @@
 <script>
 export default {
   name: "Register",
+
+  methods: {
+    register() {
+      this.$router.push("/home");
+    },
+
+    jumpLogin() {
+      this.$router.push("/login");
+    },
+  },
 };
 </script>
 
@@ -59,6 +69,6 @@ export default {
 .register-content {
   display: block;
   border-radius: 20px;
-  width: 500px;
+  width: 450px;
 }
 </style>

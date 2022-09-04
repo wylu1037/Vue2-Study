@@ -3,7 +3,7 @@
     <!-- Logo部分 -->
     <div
       style="display: flex; align-items: center; margin-left: 20px"
-      @click="jumpHome('login')"
+      @click="jumpHome('/login')"
     >
       <el-col :span="12">
         <div class="demo-basic--circle">
@@ -28,7 +28,7 @@
         margin-left: 10px;
         font-weight: bolder;
       "
-      @click="jumpHome('register')"
+      @click="jumpHome('/register')"
     >
       华中大Vue学习系统
     </div>
@@ -36,7 +36,7 @@
     <div style="display: flex; align-items: center; margin-left: auto">
       <div style="margin-right: 25px">
         <el-badge :value="99" class="item" type="primary">
-          <el-button size="small">消息</el-button>
+          <el-button @click="showMessage" size="small">消息</el-button>
         </el-badge>
       </div>
       <div style="margin-right: 10px">
@@ -62,6 +62,16 @@ export default {
   methods: {
     jumpHome(name) {
       this.$router.push(name);
+    },
+
+    showMessage() {
+      this.$notify.info({
+        title: "消息",
+        message: "您于2022年08月01日注册系统账户，欢迎使用！",
+        offset: 50,
+        showClose: false,
+        duration: 3000,
+      });
     },
   },
 };
