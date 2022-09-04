@@ -1,4 +1,5 @@
 import requests from './request'
+import instance from './mockRequest'
 
 // 获取所有链的接口
 export const getAllChainList = () => requests({
@@ -25,4 +26,10 @@ export const findPageChainList = (req) => requests({
     url: '/chain/findPageChainList',
     data: JSON.stringify(req),
     headers: {"Content-Type": "application/json; charset=UTF-8"}
+})
+
+// 查询黄页tab列表数据
+export const findYellowTabList = () => instance({
+    method: 'get',
+    url: '/yellow/findTabList'
 })

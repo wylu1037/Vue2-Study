@@ -1,9 +1,10 @@
-import {getAllChainList, deleteChainById, getNodeList, findPageChainList} from '@/api/lattice'
+import {getAllChainList, deleteChainById, getNodeList, findPageChainList, findYellowTabList} from '@/api/lattice'
 
 const state = {
     chainList: [],
     chainTotal: 0,
-    nodeList: []
+    nodeList: [],
+    yellowTabList: []
 }
 
 const actions = {
@@ -33,6 +34,13 @@ const actions = {
         if(result.code === 200) {
             context.commit('FINDPAGECHAINLIST', result.data)
         }
+    },
+
+    async findYellowTabList(context) {
+        let result = await findYellowTabList()
+        if(result.code === 200) {
+            context.commit('FINDYELLOWTABLIST', result.data)
+        }
     }
 }
 
@@ -48,6 +56,10 @@ const mutations = {
     FINDPAGECHAINLIST(state, data) {
         state.chainList = data.List
         state.chainTotal = data.Total
+    },
+
+    FINDYELLOWTABLIST(state, data) {
+        state.yellowTabList = data
     }
 }
  
