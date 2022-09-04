@@ -8,7 +8,7 @@ RUN yarn --frozen-lockfile
 
 COPY . .
 
-RUN yarn build:stage
+RUN yarn build
 
 FROM nginx:alpine as runner
 
