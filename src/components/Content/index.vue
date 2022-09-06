@@ -5,7 +5,7 @@
       <el-container style="width: 100%">
         <el-tabs
           v-model="tabValue"
-          style="width: 100%"
+          class="tabs-box"
           type="border-card"
           :closable="closable"
           @edit="editTab"
@@ -98,5 +98,10 @@ export default {
 .content-box {
   height: 92%;
   display: flex;
+}
+
+.tabs-box {
+  width: 100%;
+  overflow: auto;
 }
 </style>

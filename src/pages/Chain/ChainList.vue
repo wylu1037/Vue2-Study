@@ -70,7 +70,7 @@ export default {
     return {
       params: {
         page: 1,
-        size: 8,
+        size: 10,
       },
     };
   },
@@ -96,6 +96,7 @@ export default {
       this.$store.dispatch("latticeModule/deleteChainById", chainId);
     },
 
+    // 删除链
     deleteChain(chainId) {
       this.$confirm("此操作将永久删除链，是否继续？", "提示", {
         confirmButtonText: "确定",
@@ -104,14 +105,22 @@ export default {
       })
         .then(() => {
           // 调用接口删除链
-          // deleteChainById(chainId);
+          deleteChainById(chainId);
           this.$message({ type: "success", message: "删除成功！" });
         })
-        .catch(() => {
-          this.$message({
-            type: "info",
-            message: "已取消删除！",
-          });
+        .catch((action) => {
+          console.log(action);
+          if (action === "cancel") {
+            this.$message({
+              type: "info",
+              message: "已取消删除！",
+            });
+          } else {
+            this.$message({
+              type: "error",
+              message: "删除失败！",
+            });
+          }
         });
     },
 
