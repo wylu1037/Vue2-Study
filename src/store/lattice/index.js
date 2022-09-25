@@ -1,4 +1,4 @@
-import {getAllChainList, deleteChainById, getNodeList, findPageChainList, findYellowTabList} from '@/api/lattice'
+import { deleteChainById, findPageChainList, findYellowTabList, getAllChainList, getNodeList } from '@/api/lattice'
 
 const state = {
     chainList: [],

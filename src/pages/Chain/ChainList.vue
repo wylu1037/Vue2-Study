@@ -109,7 +109,6 @@ export default {
           this.$message({ type: "success", message: "删除成功！" });
         })
         .catch((action) => {
-          console.log(action);
           if (action === "cancel") {
             this.$message({
               type: "info",

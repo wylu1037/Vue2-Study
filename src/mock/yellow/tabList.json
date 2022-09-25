@@ -1,5 +1,54 @@
 [
-  { "id": 1, "label": "开发环境", "name": "first", "order": 1 },
+  {
+    "id": 1,
+    "label": "开发环境",
+    "name": "first",
+    "data": [
+      {
+        "type": "Linux服务器",
+        "url": "192.168.1.20",
+        "port": 22,
+        "username": "root",
+        "password": "root123"
+      },
+      {
+        "type": "包发布平台",
+        "url": "http://192.168.1.20:4004",
+        "port": 4004,
+        "username": "--",
+        "password": "--"
+      },
+      {
+        "type": "BaaS平台",
+        "url": "http://192.168.1.20:8090/login",
+        "port": 8090,
+        "username": "wylu@zkjg.com",
+        "password": "Aa123456"
+      },
+      {
+        "type": "MySql",
+        "url": "http://192.168.1.20:8090/login",
+        "port": 3306,
+        "username": "wylu@zkjg.com",
+        "password": "Aa123456"
+      },
+      {
+        "type": "Redis",
+        "url": "http://192.168.1.20:8090/login",
+        "port": 6306,
+        "username": "wylu@zkjg.com",
+        "password": "Aa123456"
+      },
+      {
+        "type": "MongoDB",
+        "url": "http://192.168.1.20:8090/login",
+        "port": 973,
+        "username": "wylu@zkjg.com",
+        "password": "Aa123456"
+      }
+    ],
+    "order": 1
+  },
   { "id": 2, "label": "测试环境", "name": "second", "order": 2 },
   { "id": 3, "label": "评测环境", "name": "third", "order": 3 },
   { "id": 4, "label": "阜南环境", "name": "fourth", "order": 4 },

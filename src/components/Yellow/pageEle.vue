@@ -1,6 +1,22 @@
 <template>
   <div class="page-box">
-    <div v-if="name == 'first'">{{ name }}</div>
+    <div v-if="name == 'first'">
+      <el-table :data="yellowTabList[0].data" style="width: 100%">
+        <el-table-column
+          type="index"
+          label="序号"
+          width="200"
+        ></el-table-column>
+        <el-table-column prop="type" label="类型" width="240">
+        </el-table-column>
+        <el-table-column prop="url" label="网址" width="240"> </el-table-column>
+        <el-table-column prop="port" label="端口" width="240">
+        </el-table-column>
+        <el-table-column prop="username" label="用户名" width="240">
+        </el-table-column>
+        <el-table-column prop="password" label="密码"> </el-table-column>
+      </el-table>
+    </div>
 
     <div v-if="name == 'second'">{{ name }}</div>
 
@@ -19,7 +35,7 @@
 export default {
   name: "PageEle",
 
-  props: ["name"],
+  props: ["name", "yellowTabList"],
 };
 </script>
 <style lang="css" scoped>
