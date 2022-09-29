@@ -4,7 +4,7 @@ name: Github Vue Demo Actions
 # 触发workflow的条件
 on:
   push:
-    branches: ["master"]
+    branches: ["main"]
 
 env:
   IMAGE_NAME: vue-study:latest
