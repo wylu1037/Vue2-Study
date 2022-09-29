@@ -39,5 +39,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          tags: ${{secrets.DOCKERHUB_USERNAME}}/hust:vue-study
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/hust:vue2-study
           push: true
